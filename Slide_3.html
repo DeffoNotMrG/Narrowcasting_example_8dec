@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narrowcasting Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+<script>var ctx2 = document.getElementById('doughnutChart').getContext('2d');
+var doughnutChart = new Chart(ctx2, {
+  type: 'doughnut',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow'],
+    datasets: [{
+      label: 'Dataset 1',
+      data: [300, 50, 100],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
+});
+</script>
+<style>
+  body {
+    font-family: 'Rubik', sans-serif;
+  }
+  .highlight {
+    color: #FA8402;
+  }
+  .refresh-timer {
+    font-size: 0.875rem;
+    color: #555;
+  }
+</style>
+</head>
+<body class="bg-[#EAE7E5]">
+<div class="min-h-screen p-8">
+  <header class="flex justify-between items-center mb-6">
+    <img src="https://www.detron.nl/app/themes/bluedragon/app/images/logo-detron.svg" alt="Logo" class="h-12">
+    <div class="text-right">
+      <h1 class="text-2xl font-semibold">Heerlen</h1>
+      <p class="refresh-timer">Auto-refresh every 5 minutes</p>
+    </div>
+  </header>
+  <main>
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-4 highlight">Nieuwe medewerkers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Placeholder for worker feed cards -->
+            <div class="bg-white p-4 rounded shadow">
+            <div class="h-50 bg-gray-200 rounded mb-2">
+              <div class="chart-container">
+                <canvas id="doughnutChart"></canvas>
+        </div>        
+          <p>Per 1 december - Frido Frencken – Cliënt manager</p>
+        </div>
+          <div class="bg-white p-4 rounded shadow">
+          <div class="h-50 bg-gray-200 rounded mb-2">
+            <img src="Harry R.png" alt="description of the image" class="object-cover h-full w-full">
+        </div>     
+          <p>Per 1 december - Harry Relyveld – Presales Consultant</p>
+        </div>
+          <div class="bg-white p-4 rounded shadow">
+          <div class="h-50 bg-gray-200 rounded mb-2">
+            <img src="DO01002619.png" alt="description of the image" class="object-cover h-full w-full">
+        </div>        
+          <p>Per 15 juli - Ghurmy Susana – Content Marketeer</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-4 highlight">Interne vacatures</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Placeholder for job listing cards -->
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2">
+          <img src="https://www.detron.nl/app/uploads/2023/04/vacature-staf-sfeer-2.jpg" alt="description of the image" class="object-cover h-full w-full"></div>
+          <p>Inside Sales Medewerker</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2"><img src="https://www.detron.nl/app/uploads/2023/12/partner-quandago-uitgelicht-1.jpg" alt="description of the image" class="object-cover h-full w-full"></div>
+          <p>Onsite Support Consultant BproCare</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2"><img src="https://www.detron.nl/app/uploads/2023/01/werkenbij-vacature-support-engineer-sfeer-3.jpg" alt="description of the image" class="object-cover h-full w-full"></div>
+          <p>Netwerkbeheerder</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
+
+<script>
+    // Ensure DOM is fully loaded before running animations
+    document.addEventListener("DOMContentLoaded", function() {
+      // GSAP animation
+      gsap.from(".mb-6", {
+        duration: 2,    // Duration of each individual animation
+        autoAlpha: 0,   // Start from invisible (0) to visible (1)
+        y: -50,         // Start 50 pixels above the final position
+        stagger: 0.3    // Stagger the start of each animation by 0.3 seconds
+      });
+    });
+  </script>
+  

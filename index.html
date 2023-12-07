@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Show</title>
+    <script>
+        // This script will switch between two slides every minute
+        let currentSlide = 1;
+
+        function switchSlide() {
+            // Switch the iframe source
+            if (currentSlide === 1) {
+                document.getElementById('slideFrame').src = 'Slide_2.html';
+                currentSlide = 2;
+            } else {
+                document.getElementById('slideFrame').src = 'Slide_1.html';
+                currentSlide = 1;
+            }
+        }
+
+        // Set interval to switch slides every 60 seconds
+        setInterval(switchSlide, 15500);
+    </script>
+</head>
+<body>
+    <iframe id="slideFrame" src="Slide_1.html" width="100%" height="1920"></iframe>
+</body>
+</html>

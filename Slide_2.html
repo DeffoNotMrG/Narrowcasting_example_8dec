@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narrowcasting Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+<style>
+  body {
+    font-family: 'Rubik', sans-serif;
+  }
+  .highlight {
+    color: #FA8402;
+  }
+  .refresh-timer {
+    font-size: 0.875rem;
+    color: #555;
+  }
+</style>
+</head>
+<body class="bg-[#EAE7E5]">
+<div class="min-h-screen p-8">
+  <header class="flex justify-between items-center mb-6">
+    <img src="https://www.detron.nl/app/themes/bluedragon/app/images/logo-detron.svg" alt="Logo" class="h-12">
+    <div class="text-right">
+      <h1 class="text-2xl font-semibold">Voorbeeld Dashboard</h1>
+      <p class="refresh-timer">Heerlen</p>
+    </div>
+  </header>
+  <main>
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-4 highlight">Vandaag</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Placeholder for worker feed cards -->
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2">
+          <img src="Photos.png" alt="description of the image" class="object-cover h-full w-full">
+      </div>        
+          <p><a class="font-semibold text-orange-500">Portretfotografie Medewerkers</a> 8 dec</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2">
+          <img src="smileys-5617876_1280-800x445.jpg" alt="description of the image" class="object-cover h-full w-full">
+      </div>        
+          <p><a class="font-semibold text-orange-500">MTO reminder</a> - jouw mening is belangrijk!</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <div class="h-40 bg-gray-200 rounded mb-2">
+          <img src="DP_0612 HIGH.png" alt="description of the image" class="object-cover h-full w-full">
+      </div>        
+          <p><a class="font-semibold text-orange-500">Belangrijke Stap:</a> Jouw Aanmelding</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <section class="mb-6"><div class="bg-white p-4 rounded shadow">
+        <iframe src="https://www.ns.nl/reisinformatie/externe-schermen/treinen/vertrektijden?stationId=HRL&columns=2&rows=7&header=&footer=&clock=true&headerLogo=false&footerLogo=false" height="1920" width="100%"></iframe>
+      </div></section>
+  </main>
+</div>
+</body>
+</html>
+
+<script>
+  // Ensure DOM is fully loaded before running animations
+  document.addEventListener("DOMContentLoaded", function() {
+    // GSAP animation
+    gsap.from(".mb-6", {
+      duration: 2,    // Duration of each individual animation
+      autoAlpha: 0,   // Start from invisible (0) to visible (1)
+      y: -50,         // Start 50 pixels above the final position
+      stagger: 0.3    // Stagger the start of each animation by 0.3 seconds
+    });
+  });
+</script>
